@@ -63,7 +63,7 @@ interface Config {
 }
 
 const config: Config = {
-  port: Number(process.env.PORT) || 3000,
+  port: globalThis.Number(process.env.PORT) || 3000,
   host: process.env.HOST || "localhost",
   environment: process.env.NODE_ENV || "development",
   apiVersion: process.env.API_VERSION || "v1",
@@ -76,15 +76,15 @@ const config: Config = {
   corsOrigin: process.env.CORS_ORIGIN || "*",
   apiPrefix: process.env.API_PREFIX || "/api/v1",
   rateLimit: {
-    windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
-    max: Number(process.env.RATE_LIMIT_MAX) || 100, // limit each IP
+    windowMs: globalThis.Number(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
+    max: globalThis.Number(process.env.RATE_LIMIT_MAX) || 100, // limit each IP
   },
   session: {
     secret: process.env.SESSION_SECRET || "your_session_secret",
     resave: false,
     saveUninitialized: true,
     cookie: {
-      maxAge: Number(process.env.SESSION_COOKIE_MAX_AGE) || 24 * 60 * 60 * 1000, // 1 day
+      maxAge: globalThis.Number(process.env.SESSION_COOKIE_MAX_AGE) || 24 * 60 * 60 * 1000, // 1 day
     },
   },
   email: {
@@ -92,12 +92,12 @@ const config: Config = {
     user: process.env.EMAIL_USER || "",
     pass: process.env.EMAIL_PASS || "",
     from: process.env.EMAIL_FROM || "",
-    port: Number(process.env.EMAIL_PORT) || 587,
+    port: globalThis.Number(process.env.EMAIL_PORT) || 587,
     secure: process.env.EMAIL_SECURE === "true", // Ensure boolean parsing
   },
   redis: {
     host: process.env.REDIS_HOST || "localhost",
-    port: Number(process.env.REDIS_PORT) || 6379,
+    port: globalThis.Number(process.env.REDIS_PORT) || 6379,
     password: process.env.REDIS_PASSWORD || "",
   },
   elasticsearch: {
