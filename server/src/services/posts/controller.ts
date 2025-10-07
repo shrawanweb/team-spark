@@ -1,4 +1,5 @@
-import { Request, Response } from "express";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Response } from "express";
 import { Post } from "./model";
 
 // Define UserRequest type to include 'body' property
