@@ -3,6 +3,7 @@ import cors from "cors";
 import authRouter from "./services/auth/routes";
 import config from "./config";
 import postsRouter from "./services/posts/routes";
+import commentsRouter from "./services/comments/route";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.get("/", (_req, res) => {
 // Importing routes
 app.use(`${API_PREFIX}/auth`, authRouter);
 app.use(`${API_PREFIX}/posts`, postsRouter);
+app.use(`${API_PREFIX}/comments`, commentsRouter);
 
 app.use((err: Error, _req: Request, res: Response) => {
   console.error("❌ Error:", err.message);
