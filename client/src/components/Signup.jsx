@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import getGoogleAuthUrl from "../utils/getGoogleAuthUrl";
 const Signup = ({ onSignup, isLoggedIn }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -68,6 +69,7 @@ const Signup = ({ onSignup, isLoggedIn }) => {
               <button
               type="button"
               className="w-full py-2 bg-white text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 flex items-center justify-center space-x-2"
+onClick={() => {window.location.href = getGoogleAuthUrl();}}
             >
               <FcGoogle className="text-xl "  />  
               <span >Continue with Google</span>
