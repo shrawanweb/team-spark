@@ -69,12 +69,12 @@ const config: Config = {
   apiVersion: process.env.API_VERSION || "v1",
   apiUrl: process.env.API_URL || "http://localhost:3000",
   baseUrl: process.env.BASE_URL || "http://localhost:3000",
-  dbUrl: process.env.DB_URL || "mongodb://localhost:27017/myapp",
+  dbUrl: process.env.DB_URL || "",
   jwtSecret: process.env.JWT_SECRET || "your_jwt-secret",
   jwtExpiration: process.env.JWT_EXPIRATION || "1h",
   logLevel: process.env.LOG_LEVEL || "info",
   corsOrigin: process.env.CORS_ORIGIN || "*",
-  apiPrefix: process.env.API_PREFIX || "/api",
+  apiPrefix: process.env.API_PREFIX || "/api/v1",
   rateLimit: {
     windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS) || 15 * 60 * 1000, // 15 minutes
     max: Number(process.env.RATE_LIMIT_MAX) || 100, // limit each IP
